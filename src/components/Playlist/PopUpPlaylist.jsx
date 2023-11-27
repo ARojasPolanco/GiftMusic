@@ -25,7 +25,7 @@ const PopUpPlaylist = ({ isShowCurrentPlaylist }) => {
     }
 
     return (
-        <article className={`absolute w-[271.6px] -bottom-2 translate-y-full grid bg-purple-light p-4 gap-2 rounded-lg border border-yellow-border transition-[right] duration-300 ${isShowCurrentPlaylist ? "right-4" : "-right-full"}`}>
+        <article className={`absolute w-[271.6px] z-10 -bottom-2 translate-y-full grid bg-purple-light p-4 gap-2 rounded-lg border border-yellow-border transition-[right] duration-300 ${isShowCurrentPlaylist ? "right-4" : "-right-full"}`}>
             <form
                 id="formPlaylistCart"
                 onSubmit={handleSubmit}
@@ -33,12 +33,14 @@ const PopUpPlaylist = ({ isShowCurrentPlaylist }) => {
                 {/* Parte frontal (Lado A)*/}
                 <div className="relative front">
                     <img className="mx-auto" src="/images/cassette.png" alt="" />
-                    <div className="flex items-center gap-2 bg-white absolute top-4 left-4 rounded-md px-2 w-[200px]">
+                    <div className="flex items-center gap-2 bg-white absolute top-4 left-4 rounded-md p-1 px-2 w-[200px] z-30">
                         <input className="text-black bg-transparent outline-none text-sm flex-1"
                             type="text"
                             placeholder="titulo"
                             size={10}
-                            name="title" />
+                            name="title"
+                            required
+                            onFocus={() => setIsShowSideA(true)} />
                         <label htmlFor="">
                             <PincelIcon />
                         </label>
@@ -53,7 +55,9 @@ const PopUpPlaylist = ({ isShowCurrentPlaylist }) => {
                             type="text"
                             placeholder="Para:"
                             size={10}
-                            name="to" />
+                            name="to"
+                            required
+                            onFocus={() => setIsShowSideA(false)} />
                         <label htmlFor="">
                             <PincelIcon />
                         </label>
@@ -64,7 +68,9 @@ const PopUpPlaylist = ({ isShowCurrentPlaylist }) => {
                             type="text"
                             placeholder="Dedicatoria"
                             size={10}
-                            name="message" />
+                            name="message"
+                            required
+                            onFocus={() => setIsShowSideA(false)} />
                     </div>
                 </div>
 

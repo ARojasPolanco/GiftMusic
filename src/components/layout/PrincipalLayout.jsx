@@ -14,8 +14,9 @@ const PrincipalLayout = ({ children }) => {
     return (
         <section className="min-h-screen font-urbanist bg-purple-bg text-white bg-[url(/images/bg-auth-mobile.png)] bg-right-bottom bg-no-repeat sm:bg-[url(/images/bg-auth-desktop.png)] overflow-hidden">
             <header className="flex p-2 justify-between items-center bg-purple-dark sm:text-lg relative">
-                <h1 className="uppercase font-semibold">Gift Music</h1>
-
+                <Link to={"/"} >
+                    <h1 className="uppercase font-semibold">Gift Music</h1>
+                </Link>
                 <section className="flex gap-4 [&>button]:uppercase [&>button]:border-[1px] [&>button]:py-1 [&>button]:px-2 [&>button]:text-sm [&>button]:rounded-full [&>button]:font-semibold [&>button]:border-yellow-border">
                     <button onClick={() => setIsShowAuthOptions(!isShowAuthOptions)} className="hover:bg-purple-light">Mi cuenta</button>
                     <button onClick={() => setIsShowCurrentPlaylist(!isShowCurrentPlaylist)} className="flex gap-3 sm:gap-2 items-center hover:bg-purple-light">

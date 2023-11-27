@@ -26,8 +26,9 @@ function App() {
         <Route path='/artists/:id' element={<ArtistDetail />} />
         <Route path='/playlists' element={<Playlists />} />
         <Route path='/playlists/:id' element={<PlaylistDetail />} />
-        <Route path='/playlists/public/:id' element={<PlaylistShared />} />
       </Route>
+
+      <Route path='/playlists/public/:id' element={<PlaylistShared />} />
 
       <Route path='*' element={<Page404 />} />
 
