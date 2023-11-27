@@ -1,4 +1,4 @@
-import PlaylistsCard from "./playlistsCard"
+import PlaylistsCard from "./PlaylistsCard"
 
 const ListPlaylists = ({ playlists }) => {
 
