@@ -9,7 +9,13 @@ const PrincipalLayout = ({ children }) => {
     const [isShowAuthOptions, setIsShowAuthOptions] = useState(false)
     const [isShowCurrentPlaylist, setIsShowCurrentPlaylist] = useState(false)
     const tracks = usePlaylistCart(store => store.tracks)
+    const cleanTracks = usePlaylistCart(store => store.cleanTracks)
     const logout = useUserInfo(state => state.logout)
+
+    const handleClickLogOut = () => {
+        logout()
+        cleanTracks()
+    }
 
     return (
         <section className="min-h-screen font-urbanist bg-purple-bg text-white bg-[url(/images/bg-auth-mobile.png)] bg-right-bottom bg-no-repeat sm:bg-[url(/images/bg-auth-desktop.png)] overflow-hidden">
@@ -29,7 +35,7 @@ const PrincipalLayout = ({ children }) => {
                     <Link to={"/playlists"} className="flex gap-2 items-center uppercase font-semibold hover:text-yellow-border group">
                         <MinimalPlayIcon />
                         Mis Grabaciones</Link>
-                    <button onClick={logout} className="flex gap-2 items-center uppercase font-semibold hover:text-yellow-border group">
+                    <button onClick={handleClickLogOut} className="flex gap-2 items-center uppercase font-semibold hover:text-yellow-border group">
                         <LogoutIcon />
                         Cerrar sesión</button>
                 </article>

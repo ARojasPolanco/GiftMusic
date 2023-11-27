@@ -1,11 +1,10 @@
 import { Link } from "react-router-dom"
 import { PincelIcon } from "../shared/Icons"
 
-const DISTANCE_DIFFERENT = 54
 
 const PlaylistsCard = ({ playlist, index }) => {
 
-    const topDistance = index * DISTANCE_DIFFERENT
+    const topDistance = index * 54
 
     return (
         <Link
